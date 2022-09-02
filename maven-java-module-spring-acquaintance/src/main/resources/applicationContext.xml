@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd " default-lazy-init="true">
+
+
+        <bean id="userDao" class="org.aaa.Impl.UserDaoImpl">
+            <property name="properties">
+                <props>
+                    <prop key="k1">v1</prop>
+                    <prop key="k2">v2</prop>
+                    <prop key="k3">v3</prop>
+                </props>
+            </property>
+        </bean>
+    <!--    <bean id="userDao1" class="org.aaa.Impl.UserDaoImpl" init-method="init" destroy-method="destroy"></bean>-->
+    <!--    <bean id="test" class="org.aaa.Impl.LifecycleTest" init-method="init"></bean>-->
+
+    <!--    <bean id="studentDao" class="org.aaa.Impl.StudentDaoImpl">-->
+    <!--        <property name="stuinfo">-->
+    <!--            <props>-->
+    <!--                <prop key="name">李江</prop>-->
+    <!--                <prop key="age">21</prop>-->
+    <!--                <prop key="sex">男</prop>-->
+    <!--            </props>-->
+    <!--        </property>-->
+    <!--    </bean>-->
+    <!--    <bean id="studentDao1" class="org.aaa.Impl.StudentDaoImpl1">-->
+    <!--        <property name="name" value="李江"></property>-->
+    <!--        <property name="age" value="21"></property>-->
+    <!--        <property name="sex" value="男"></property>-->
+    <!--    </bean>-->
+
+
+    <!--JDBC-->
+    <!--把数据库连接池交给IOC容器:方式1-->
+<!--    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">-->
+<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/spring_db"></property>-->
+<!--        <property name="username" value="root"></property>-->
+<!--        <property name="password" value="552157"></property>-->
+<!--    </bean>-->
+
+    <!--方式二-->
+<!--    <context:property-placeholder location="classpath:jdbc.properties"/>-->
+<!--    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">-->
+<!--        <property name="driverClassName" value="${jdbc.driver}"></property>-->
+<!--        <property name="url" value="${jdbc.url}"></property>-->
+<!--        <property name="username" value="${jdbc.username}"></property>-->
+<!--        <property name="password" value="${jdbc.password}"></property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;把AccountDao交给IOC容器&ndash;&gt;-->
+<!--    <bean id="accountDao" class="org.aaa.Impl.AccountDaoIpml">-->
+<!--        <property name="queryRunner" ref="queryRunner"></property>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash;把QueryRunner交给IOC容器&ndash;&gt;-->
+<!--    <bean id="queryRunner" class="org.apache.commons.dbutils.QueryRunner">-->
+<!--        <constructor-arg name="ds" ref="dataSource"></constructor-arg>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash;把AccountService交给IOC容器&ndash;&gt;-->
+<!--    <bean id="accountService" class="org.aaa.service.AccountServiceImpl">-->
+<!--        <property name="accountDao" ref="accountDao"></property>-->
+<!--    </bean>-->
+    <!--    <bean id="accountDao" class="org.aaa.dao.AccountDao"/>-->
+</beans>

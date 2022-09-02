@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aaa.mybatis.ParameterMapper">
+    <sql id="SFU">
+        select id, username, password
+        from user
+    </sql>
+
+    <!--    <select id="getAllUserT" resultType="mybatisUser">-->
+    <!--        select * from mybatis_db_user-->
+    <!--    </select>-->
+    <select id="getAllUser" resultType="mybatis_User">
+        select *
+        from mybatisUser
+    </select>
+
+    <select id="getUserByUsername" resultType="user">
+        <!--select *from mybatisUser where username = #{username}-->
+        select *from user where username = '${username}'
+    </select>
+    <select id="checkLogin" resultType="user">
+        where username =
+        #{param1}
+        and
+        password
+        =
+        #{param2}
+    </select>
+    <select id="checkLoginByMap" resultType="user">
+        select id, username, password
+        from user
+        where username = #{username}
+          and password = #{password}
+    </select>
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+<!--        <selectKey keyColumn="id" keyProperty="id" resultType="int" order="AFTER">-->
+<!--            SELECT LAST_INSERT_ID();-->
+<!--        </selectKey>-->
+        insert into user(username,password) values (#{username},#{password})
+
+    </insert>
+    <select id="checkLoginByParam" resultType="com.aaa.mybatis.api.User">
+        select id, username, password
+        from user
+        where username = #{username}
+          and password = #{password}
+    </select>
+
+</mapper>

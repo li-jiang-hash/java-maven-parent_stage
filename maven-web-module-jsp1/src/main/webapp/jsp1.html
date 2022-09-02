@@ -1,0 +1,63 @@
+<!--<%@ page isELIgnored="false" %>-->
+<!--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>-->
+<!--<%@ page contentType="text/html;charset=UTF-8"%>-->
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!DOCTYPE html>
+<html lang="en" xml:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: pink;
+        }
+        table{
+            border-collapse: collapse;
+            margin: 50px auto 0 auto;
+            width: 800px;
+        }
+        tr{
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<a th:href="@{/Welcome?method=logout}">sssss</a>
+<!--<lj:if test="${status == 1}">男</lj:if>-->
+<!--<lj:if test="${status == 2}">女</lj:if>-->
+<table border="1" cellspacing="0">
+    <caption style="color: red;font-size: 38px">欢迎<span style="color: blue" th:text="${mybatisUser}"></span></caption>
+    <!--<table>-->
+    <thead>
+    <tr>
+        <th>商品ID</th>
+        <th>商品名称</th>
+        <th>商品公司</th>
+        <th>商品价格</th>
+        <th>商品简介</th>
+        <th>商品状态</th>
+        <th colspan="2">商品编辑</th>
+    </tr>
+    </thead>
+    <tbody th:each="brand : ${brands}">
+        <tr align="center">
+            <td th:text="${brand.id}"></td>
+            <td th:text="${brand.name}"></td>
+            <td th:text="${brand.address}"></td>
+            <td th:text="${brand.price}"></td>
+            <td th:text="${brand.slogan}"></td>
+            <td style="color: blue;cursor: pointer" th:if="${brand.status ==1}">
+                热卖中
+            </td>
+            <td style="color: #999;cursor:no-drop;" th:if="${brand.status ==0}">
+                已售空
+            </td>
+            <td><a href="#">修改</a></td>
+            <td><a href="#">删除</a></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

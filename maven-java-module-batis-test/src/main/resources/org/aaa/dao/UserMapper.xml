@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.aaa.dao.UserMapper">
+    <resultMap id="userMap" type="UserOrder">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="birthday" property="birthday"></result>
+        <result column="sex" property="sex"></result>
+        <result column="address" property="address"></result>
+        <collection property="orderList" ofType="Order">
+            <id column="oid" property="id"></id>
+            <result column="ordertime" property="ordertime"></result>
+            <result column="total" property="money"></result>
+        </collection>
+    </resultMap>
+    <select id="findAllWithOrder" resultMap="userMap">
+        SELECT *, o.id oid
+        FROM USER u
+                 LEFT JOIN orders o ON u.`id` = o.`uid`;
+    </select>
+    <resultMap id="userAndRoleMap" type="UserRole">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="birthday" property="birthday"></result>
+        <result column="sex" property="sex"></result>
+        <result column="address" property="address"></result>
+        <collection property="roleList" ofType="Role">
+            <id column="id" property="id"></id>
+            <result column="rolename" property="roleName"></result>
+            <result column="roledesc" property="roleDesc"></result>
+        </collection>
+    </resultMap>
+    <select id="findAllWithRole" resultMap="userAndRoleMap">
+        SELECT *
+        FROM USER u
+                 LEFT JOIN user_role ur ON u.`id` = ur.`userid`
+                 INNER JOIN
+             role r
+             ON ur.`roleid` = r.`id`;
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <select id="findAllWithRoleTest" resultType="RoleTest">
+        SELECT u.id id,u.username userName,u.birthday birthday,u.sex sex,
+               u.address address,r.id roleId,r.rolename roleName,r.roleDesc roleDesc
+        FROM USER u
+                 LEFT JOIN user_role ur ON u.`id` = ur.`userid`
+                 INNER JOIN
+             role r
+             ON ur.`roleid` = r.`id`;
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <select id="findByUid" parameterType="int" resultType="Order">
+        SELECT * FROM orders where uid = #{uid}
+    </select>
+    <resultMap id="userMaps" type="user">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="birthday" property="birthday"></result>
+        <result column="sex" property="sex"></result>
+        <result column="address" property="address"></result>
+        <!--根据用户id，查询订单表-->
+        <collection property="orderList" column="id" ofType="order"
+                    select="com.aaa.mapper.OrderMapper.findByUid"></collection>
+    </resultMap>
+    <select id="findAllWithOrder1" resultMap="userMaps">
+        select * from user
+    </select>
+
+</mapper>

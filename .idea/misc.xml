@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/maven-java-module-batis" />
+    <file type="web" url="file://$PROJECT_DIR$/maven-web-modlue-guigu" />
+    <file type="web" url="file://$PROJECT_DIR$/maven-web-modlue-guigu-cart" />
+    <file type="web" url="file://$PROJECT_DIR$/maven-web-modlue-guigu-ssm/demo-module01-web" />
+    <file type="web" url="file://$PROJECT_DIR$/maven-web-module" />
+    <file type="web" url="file://$PROJECT_DIR$/maven-web-module-jsp1" />
+    <file type="web" url="file://$PROJECT_DIR$/maven-web-module-mvc" />
+    <file type="web" url="file://$PROJECT_DIR$/maven-web-module_Test" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/maven-web-modlue-guigu-ssm/demo-imperial-court-ssm-show/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-web-module-guigu-MVC/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-web-module-jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

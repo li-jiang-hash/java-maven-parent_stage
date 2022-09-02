@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="studentOne" class="org.aaa.api.Student"></bean>
+<bean id="studentTwo" class="org.aaa.api.Student">
+   <property name="eid" value="1002" />
+   <property name="empName" value="张三" />
+   <property name="age" value="02" />
+   <property name="sex" value="男" />
+   <property name="email" value="123@qq.com" />
+</bean>
+</beans>
