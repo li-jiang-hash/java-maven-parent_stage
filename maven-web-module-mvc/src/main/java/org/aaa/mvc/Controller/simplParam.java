@@ -13,6 +13,6 @@ public class simplParam {
     public String simpleParam(Integer id,String username) {
         System.out.println(id);
         System.out.println(username);
-        return "success";
+        return "/WEB-INF/pages/success.jsp";
     }
 }

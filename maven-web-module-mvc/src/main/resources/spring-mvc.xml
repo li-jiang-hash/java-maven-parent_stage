@@ -15,4 +15,14 @@
         <property name="prefix" value="/WEB-INF/pages/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
+    <!--处理器映射器和适配器增强-->
+    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+    <bean id="conversionService"
+          class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="org.aaa.mvc.Controller.DateConverter"></bean>
+            </set>
+        </property>
+    </bean>
 </beans>
