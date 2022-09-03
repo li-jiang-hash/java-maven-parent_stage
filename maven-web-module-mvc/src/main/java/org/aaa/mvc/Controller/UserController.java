@@ -1,5 +1,6 @@
 package org.aaa.mvc.Controller;
 
+import org.aaa.mvc.api.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,9 +16,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
     @RequestMapping(path = "/quick",
             method = RequestMethod.GET,
-            params = {"accountName"})
+            params = {"q"})
     public String quick() {
+        System.out.println();
         System.out.println("quick running.....");
         return "success";
     }
+    @RequestMapping("/simpleParam")
+    public String simpleParam(Integer id,String username) {
+        System.out.println(id);
+        System.out.println(username);
+        return "success";
+    }
+    @RequestMapping("/pojoParam")
+    public String pojoParam(User user) {
+        System.out.println(user);
+        return "success";
+    }
+
 }

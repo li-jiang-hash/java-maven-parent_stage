@@ -34,6 +34,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+        </dependency>
         <!--servlet坐标-->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -56,8 +61,8 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <port>8220</port><!--启动端口默认：8080-->
-                    <path>/maven_web_module_mvc</path><!--项目的站点名，即对外访问路径-->
+                    <port>80</port><!--启动端口默认：8080-->
+                    <path>/</path><!--项目的站点名，即对外访问路径-->
                     <uriEncoding>UTF-8</uriEncoding><!--字符集编码默认：IS0-8859-1-->
                     <server>tomcat7</server><!--服务器名称-->
                 </configuration>
