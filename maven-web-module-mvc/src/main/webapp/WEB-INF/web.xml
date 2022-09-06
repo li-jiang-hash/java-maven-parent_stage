@@ -5,7 +5,6 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <display-name>Archetype Created Web Application</display-name>
-
     <!--前端控制器-->
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
@@ -33,4 +32,18 @@
         <filter-name>CharacterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+
+
+
+
+    <!--处理500异常-->
+<!--    <error-page>-->
+<!--        <error-code>500</error-code>-->
+<!--        <location>/</location>-->
+<!--    </error-page>&lt;!&ndash;处理404异常&ndash;&gt;-->
+<!--    <error-page>-->
+<!--        <error-code>404</error-code>-->
+<!--        <location>/</location>-->
+<!--    </error-page>-->
 </web-app>

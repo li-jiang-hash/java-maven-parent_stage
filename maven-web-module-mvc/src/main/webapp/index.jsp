@@ -2,7 +2,7 @@
 <html>
 <body>
 <h2>Hello World!</h2>
-<a href="${pageContext.request.contextPath}/user/simpleParam?id=1&username=fyh">基本类型</a>
+<a href="${pageContext.request.contextPath}/user/account?id=1&username=fyh">基本类型</a>
 <form action="${pageContext.request.contextPath}/user/pojoParam" method="post">
     编号：<input type="text" name="id"> <br>
     用户名：<input type="text" name="username"> <br>
@@ -42,5 +42,20 @@
     生日：<input type="text" name="birthday">
     <input type="submit" value="自定义类型转换器">
 </form>
+<a href="${pageContext.request.contextPath}/user/findByPage?pageNo=2">分页查询</a>
+<a href="${pageContext.request.contextPath}/user/returnVoid">Request</a>
+<a href="${pageContext.request.contextPath}/user/returnModelAndView1">返回ModelAndView对象</a>
+<a href="${pageContext.request.contextPath}/user/rest/success">test</a>
+<a href="${pageContext.request.contextPath}/user/rest/hello">hello</a>
+<a href="${pageContext.request.contextPath}/user/rest/1">1</a>
+<a href="${pageContext.request.contextPath}/user1">user1</a>
+<a href="${pageContext.request.contextPath}/user/fileUpload">fileUpload</a>
+<form action="${pageContext.request.contextPath}/user/param" method="post">
+    <input type="text" name="userName" placeholder="username"/>
+    <input type="text" name="password" placeholder="password"/>
+    <input type="submit" value="param">
+</form>
+
+<a href="${pageContext.request.contextPath}/user/mav">Module</a>
 </body>
 </html>
